@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 export const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
-  const [filteredRestaurant,setFilteredRestaurant] = useState([])
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   //Whenever state updates, react triggers a reconciliation algo(re-render component)
@@ -16,13 +16,13 @@ export const Body = () => {
   //the second argument is a dependency array
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING#"
+      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING#"
     );
     const json = await data.json();
     const formattedData =
       json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     setListOfRes(formattedData);
-    setFilteredRestaurant(formattedData)
+    setFilteredRestaurant(formattedData);
   };
 
   return listOfRes?.length === 0 ? (
@@ -66,7 +66,12 @@ export const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant.info} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant.info} />
+          </Link>
         ))}
       </div>
     </div>
