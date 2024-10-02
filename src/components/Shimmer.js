@@ -1,20 +1,29 @@
 const Shimmer = () => {
+  console.log("here")
   return (
-    <div className="shimmer-container">
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
+    <div className="flex flex-wrap">
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
+      <div className="bg-gray-100 w-52 h-[400px] rounded-lg m-[20px]"></div>
     </div>
   );
 };

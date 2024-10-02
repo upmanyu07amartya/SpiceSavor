@@ -1,40 +1,44 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus"
+import useOnlineStatus from "../utils/useOnlineStatus";
 export const Header = () => {
-
-  const online = useOnlineStatus()
+  const online = useOnlineStatus();
 
   const [btnName, setBtnName] = useState("Login");
   return (
-    <div className="header">
+    <div className="flex justify-between bg-pink-100 shadow-lg mb-2 px-2 lg:bg-yellow-100">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL}></img>
+        <img className="w-56" src={LOGO_URL}></img>
       </div>
-      <div className="nav-items">
-        <ul>
-          <l1>
-            {online? "Online" : "Offline"}
-          </l1>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-6 m-4">
+          <li className="px-2">{online ? "Online" : "Offline"}</li>
+          <li className="px-2">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/contact">Contact</Link>
           </li>
-          <li>Cart</li>
-          <button
-            className="login"
-            onClick={() => {
-              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-            }}
-          >
-            {btnName}
-          </button>
+          <li className="px-2">
+            <Link to="/grocery">Grocery</Link>
+          </li>
+          <li className="px-2">Cart</li>
+          <li className="my-[-6px] px-2">
+            <button
+              className="p-2 bg-gray-400 rounded-lg"
+              onClick={() => {
+                btnName === "Login"
+                  ? setBtnName("Logout")
+                  : setBtnName("Login");
+              }}
+            >
+              {btnName}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

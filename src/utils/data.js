@@ -1,3 +1,79 @@
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.logo {
+  width: 200px;
+}
+.nav-items {
+  padding: 0px 20px;
+}
+
+.nav-items > ul {
+  display: flex;
+  font-size: 24px;
+  list-style-type: none;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.Search {
+  padding: 10px;
+}
+
+.res-card {
+  padding: 5px;
+  width: 200px;
+  margin: 15px;
+}
+.res-container {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.res-logo {
+  width: 100%;
+  height: 45%;
+}
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  width: 200px;
+  height: 300px;
+  background-color: #f0f0f0;
+  margin: 20px;
+}
+.login {
+  padding: 0 20px;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+}
+.search {
+  margin: 10px;
+}
+.user-card{
+  padding: 10px;
+  border: 1px solid black;
+} */
+
 export const restaurantsList = [
   {
     info: {
@@ -767,5 +843,3 @@ export const restaurantsList = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
-
-

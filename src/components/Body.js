@@ -35,17 +35,18 @@ export const Body = () => {
   ) : (
     <div className="body">
       {/* <div className="Search">Search</div> */}
-      <div className="filter">
-        <div className="search">
+      <div className="flex justify-between ml-7">
+        <div className="m-4 p-4 ">
           <input
             type="text"
-            className="search-box"
+            className="border  border-solid border-gray-700 rounded-md h-8"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 bg-green-200 m-4 rounded-lg"
             onClick={() => {
               //filter restaurants card and update UI
               const filteredRes = listOfRes.filter((res) =>
@@ -57,19 +58,21 @@ export const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRes.filter(
-              (res) => res.info.avgRating > 4.1
-            );
-            setListOfRes(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="m-4 p-4  flex items-center">
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={() => {
+              const filteredList = listOfRes.filter(
+                (res) => res.info.avgRating > 4.1
+              );
+              setListOfRes(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap ml-10">
         {filteredRestaurant?.map((restaurant) => (
           <Link
             key={restaurant.info.id}
