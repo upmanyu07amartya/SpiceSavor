@@ -8,8 +8,8 @@ export const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg mb-2 px-2 lg:bg-yellow-100">
-      <div className="logo-container">
-        <img className="w-56" src={LOGO_URL}></img>
+      <div className="ml-2">
+        <img className="w-40 rounded-lg my-4" src={LOGO_URL}></img>
       </div>
       <div className="flex items-center">
         <ul className="flex p-6 m-4">
