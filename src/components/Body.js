@@ -3,10 +3,13 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { withOpenLabel } from "./RestaurantCard";
 export const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardOpen = withOpenLabel(RestaurantCard)
 
   //Whenever state updates, react triggers a reconciliation algo(re-render component)
 
@@ -29,6 +32,7 @@ export const Body = () => {
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) return <h1>Lokks like you are offline</h1>;
+  console.log("list",listOfRes)
 
   return listOfRes?.length === 0 ? (
     <Shimmer />
@@ -78,7 +82,12 @@ export const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant.info} />
+            {/* if res is open then add Open label to it */}
+            {restaurant?.info?.isOpen ? (
+              <RestaurantCardOpen resData={restaurant.info} />
+            ) : (
+              <RestaurantCard resData={restaurant.info} />
+            )}
           </Link>
         ))}
       </div>
