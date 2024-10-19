@@ -3,9 +3,11 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 export const Header = () => {
-  const data = useContext(UserContext)
+  const data = useContext(UserContext);
   const online = useOnlineStatus();
+  const cartItems = useSelector((store) => store.cart.items);
 
   const [btnName, setBtnName] = useState("Login");
   return (
@@ -28,7 +30,9 @@ export const Header = () => {
           <li className="px-2">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-2">Cart</li>
+          <li className="px-2 font-bold">
+            <Link to="/cart">Cart({cartItems.length})</Link>
+          </li>
           <li className="my-[-6px] px-2">
             <button
               className="p-2 bg-gray-400 rounded-lg"
